@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='todo',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\ntodo.proto\x12\x04todo\"W\n\x04Task\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0bis_complete\x18\x03 \x01(\x08\x12 \n\x08priority\x18\x04 \x01(\x0e\x32\x0e.todo.Priority\"\x11\n\x0fListTaskRequest\",\n\x10ListTaskResponse\x12\x18\n\x04task\x18\x01 \x01(\x0b\x32\n.todo.Task\" \n\x12GetTaskByIdRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"Z\n\x13GetTaskByIdResponce\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0bis_complete\x18\x02 \x01(\x08\x12 \n\x08priority\x18\x03 \x01(\x0e\x32\x0e.todo.Priority\"$\n\x14GetTaskByNameRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"Z\n\x15GetTaskByNameResponce\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x13\n\x0bis_complete\x18\x02 \x01(\x08\x12 \n\x08priority\x18\x03 \x01(\x0e\x32\x0e.todo.Priority*/\n\x08Priority\x12\x07\n\x03URG\x10\x00\x12\x08\n\x04HIGH\x10\x01\x12\x07\n\x03MED\x10\x02\x12\x07\n\x03LOW\x10\x03\x32\xd1\x01\n\x04Todo\x12;\n\x08ListTask\x12\x15.todo.ListTaskRequest\x1a\x16.todo.ListTaskResponse0\x01\x12\x42\n\x0bGetTaskById\x12\x18.todo.GetTaskByIdRequest\x1a\x19.todo.GetTaskByIdResponce\x12H\n\rGetTaskByName\x12\x1a.todo.GetTaskByNameRequest\x1a\x1b.todo.GetTaskByNameResponceb\x06proto3')
+  serialized_pb=_b('\n\ntodo.proto\x12\x04todo\"W\n\x04Task\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0bis_complete\x18\x03 \x01(\x08\x12 \n\x08priority\x18\x04 \x01(\x0e\x32\x0e.todo.Priority\"\x11\n\x0fListTaskRequest\",\n\x10ListTaskResponse\x12\x18\n\x04task\x18\x01 \x01(\x0b\x32\n.todo.Task\" \n\x12GetTaskByIdRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"Z\n\x13GetTaskByIdResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0bis_complete\x18\x02 \x01(\x08\x12 \n\x08priority\x18\x03 \x01(\x0e\x32\x0e.todo.Priority\"$\n\x14GetTaskByNameRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"Z\n\x15GetTaskByNameResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x13\n\x0bis_complete\x18\x02 \x01(\x08\x12 \n\x08priority\x18\x03 \x01(\x0e\x32\x0e.todo.Priority*/\n\x08Priority\x12\x07\n\x03URG\x10\x00\x12\x08\n\x04HIGH\x10\x01\x12\x07\n\x03MED\x10\x02\x12\x07\n\x03LOW\x10\x03\x32\xd1\x01\n\x04Todo\x12;\n\x08ListTask\x12\x15.todo.ListTaskRequest\x1a\x16.todo.ListTaskResponse0\x01\x12\x42\n\x0bGetTaskById\x12\x18.todo.GetTaskByIdRequest\x1a\x19.todo.GetTaskByIdResponse\x12H\n\rGetTaskByName\x12\x1a.todo.GetTaskByNameRequest\x1a\x1b.todo.GetTaskByNameResponseb\x06proto3')
 )
 
 _PRIORITY = _descriptor.EnumDescriptor(
@@ -199,29 +199,29 @@ _GETTASKBYIDREQUEST = _descriptor.Descriptor(
 )
 
 
-_GETTASKBYIDRESPONCE = _descriptor.Descriptor(
-  name='GetTaskByIdResponce',
-  full_name='todo.GetTaskByIdResponce',
+_GETTASKBYIDRESPONSE = _descriptor.Descriptor(
+  name='GetTaskByIdResponse',
+  full_name='todo.GetTaskByIdResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='todo.GetTaskByIdResponce.name', index=0,
+      name='name', full_name='todo.GetTaskByIdResponse.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='is_complete', full_name='todo.GetTaskByIdResponce.is_complete', index=1,
+      name='is_complete', full_name='todo.GetTaskByIdResponse.is_complete', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='priority', full_name='todo.GetTaskByIdResponce.priority', index=2,
+      name='priority', full_name='todo.GetTaskByIdResponse.priority', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -275,29 +275,29 @@ _GETTASKBYNAMEREQUEST = _descriptor.Descriptor(
 )
 
 
-_GETTASKBYNAMERESPONCE = _descriptor.Descriptor(
-  name='GetTaskByNameResponce',
-  full_name='todo.GetTaskByNameResponce',
+_GETTASKBYNAMERESPONSE = _descriptor.Descriptor(
+  name='GetTaskByNameResponse',
+  full_name='todo.GetTaskByNameResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='todo.GetTaskByNameResponce.id', index=0,
+      name='id', full_name='todo.GetTaskByNameResponse.id', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='is_complete', full_name='todo.GetTaskByNameResponce.is_complete', index=1,
+      name='is_complete', full_name='todo.GetTaskByNameResponse.is_complete', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='priority', full_name='todo.GetTaskByNameResponce.priority', index=2,
+      name='priority', full_name='todo.GetTaskByNameResponse.priority', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -321,15 +321,15 @@ _GETTASKBYNAMERESPONCE = _descriptor.Descriptor(
 
 _TASK.fields_by_name['priority'].enum_type = _PRIORITY
 _LISTTASKRESPONSE.fields_by_name['task'].message_type = _TASK
-_GETTASKBYIDRESPONCE.fields_by_name['priority'].enum_type = _PRIORITY
-_GETTASKBYNAMERESPONCE.fields_by_name['priority'].enum_type = _PRIORITY
+_GETTASKBYIDRESPONSE.fields_by_name['priority'].enum_type = _PRIORITY
+_GETTASKBYNAMERESPONSE.fields_by_name['priority'].enum_type = _PRIORITY
 DESCRIPTOR.message_types_by_name['Task'] = _TASK
 DESCRIPTOR.message_types_by_name['ListTaskRequest'] = _LISTTASKREQUEST
 DESCRIPTOR.message_types_by_name['ListTaskResponse'] = _LISTTASKRESPONSE
 DESCRIPTOR.message_types_by_name['GetTaskByIdRequest'] = _GETTASKBYIDREQUEST
-DESCRIPTOR.message_types_by_name['GetTaskByIdResponce'] = _GETTASKBYIDRESPONCE
+DESCRIPTOR.message_types_by_name['GetTaskByIdResponse'] = _GETTASKBYIDRESPONSE
 DESCRIPTOR.message_types_by_name['GetTaskByNameRequest'] = _GETTASKBYNAMEREQUEST
-DESCRIPTOR.message_types_by_name['GetTaskByNameResponce'] = _GETTASKBYNAMERESPONCE
+DESCRIPTOR.message_types_by_name['GetTaskByNameResponse'] = _GETTASKBYNAMERESPONSE
 DESCRIPTOR.enum_types_by_name['Priority'] = _PRIORITY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -361,12 +361,12 @@ GetTaskByIdRequest = _reflection.GeneratedProtocolMessageType('GetTaskByIdReques
   ))
 _sym_db.RegisterMessage(GetTaskByIdRequest)
 
-GetTaskByIdResponce = _reflection.GeneratedProtocolMessageType('GetTaskByIdResponce', (_message.Message,), dict(
-  DESCRIPTOR = _GETTASKBYIDRESPONCE,
+GetTaskByIdResponse = _reflection.GeneratedProtocolMessageType('GetTaskByIdResponse', (_message.Message,), dict(
+  DESCRIPTOR = _GETTASKBYIDRESPONSE,
   __module__ = 'todo_pb2'
-  # @@protoc_insertion_point(class_scope:todo.GetTaskByIdResponce)
+  # @@protoc_insertion_point(class_scope:todo.GetTaskByIdResponse)
   ))
-_sym_db.RegisterMessage(GetTaskByIdResponce)
+_sym_db.RegisterMessage(GetTaskByIdResponse)
 
 GetTaskByNameRequest = _reflection.GeneratedProtocolMessageType('GetTaskByNameRequest', (_message.Message,), dict(
   DESCRIPTOR = _GETTASKBYNAMEREQUEST,
@@ -375,12 +375,12 @@ GetTaskByNameRequest = _reflection.GeneratedProtocolMessageType('GetTaskByNameRe
   ))
 _sym_db.RegisterMessage(GetTaskByNameRequest)
 
-GetTaskByNameResponce = _reflection.GeneratedProtocolMessageType('GetTaskByNameResponce', (_message.Message,), dict(
-  DESCRIPTOR = _GETTASKBYNAMERESPONCE,
+GetTaskByNameResponse = _reflection.GeneratedProtocolMessageType('GetTaskByNameResponse', (_message.Message,), dict(
+  DESCRIPTOR = _GETTASKBYNAMERESPONSE,
   __module__ = 'todo_pb2'
-  # @@protoc_insertion_point(class_scope:todo.GetTaskByNameResponce)
+  # @@protoc_insertion_point(class_scope:todo.GetTaskByNameResponse)
   ))
-_sym_db.RegisterMessage(GetTaskByNameResponce)
+_sym_db.RegisterMessage(GetTaskByNameResponse)
 
 
 
@@ -408,7 +408,7 @@ _TODO = _descriptor.ServiceDescriptor(
     index=1,
     containing_service=None,
     input_type=_GETTASKBYIDREQUEST,
-    output_type=_GETTASKBYIDRESPONCE,
+    output_type=_GETTASKBYIDRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -417,7 +417,7 @@ _TODO = _descriptor.ServiceDescriptor(
     index=2,
     containing_service=None,
     input_type=_GETTASKBYNAMEREQUEST,
-    output_type=_GETTASKBYNAMERESPONCE,
+    output_type=_GETTASKBYNAMERESPONSE,
     serialized_options=None,
   ),
 ])

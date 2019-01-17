@@ -4,8 +4,8 @@ package todo;
 
 service Todo {
     rpc ListTask(ListTaskRequest) returns (stream ListTaskResponse);
-    rpc GetTaskById(GetTaskByIdRequest) returns (GetTaskByIdResponce);
-    rpc GetTaskByName(GetTaskByNameRequest) returns (GetTaskByNameResponce);
+    rpc GetTaskById(GetTaskByIdRequest) returns (GetTaskByIdResponse);
+    rpc GetTaskByName(GetTaskByNameRequest) returns (GetTaskByNameResponse);
 }
 
 enum Priority {
@@ -33,7 +33,7 @@ message GetTaskByIdRequest {
     int32 id = 1;
 }
 
-message GetTaskByIdResponce {
+message GetTaskByIdResponse {
     string name = 1;
     bool is_complete = 2;
     Priority priority = 3;
@@ -43,7 +43,7 @@ message GetTaskByNameRequest {
     string name = 1;
 }
 
-message GetTaskByNameResponce {
+message GetTaskByNameResponse {
     int32 id = 1;
     bool is_complete = 2;
     Priority priority = 3;
