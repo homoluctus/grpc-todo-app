@@ -30,13 +30,13 @@ message ListTaskResponse {
 }
 
 message GetTaskByIdRequest {
-    string name = 1;
-    bool is_complete = 2;
-    Priority priority = 3;
+    int32 id = 1;
 }
 
 message GetTaskByIdResponce {
-    Task task = 1;
+    string name = 1;
+    bool is_complete = 2;
+    Priority priority = 3;
 }
 
 message GetTaskByNameRequest {
