@@ -8,13 +8,37 @@ import todo_pb2_grpc
 
 
 class Todo(todo_pb2_grpc.TodoServicer):
+    def __init__(self):
+        self.todo_list = read_todo_from_db()
+
+    def _get_task(self, key, value):
+        """
+        Find value by key
+
+        :params key: sequence key of todo_list
+        :params value: value of request sent by a user
+        """
+
+        for task in self.todo_list:
+            if task[key] == value:
+                return task
+        return None
+
     def ListTask(self, request, context):
-        yield task
+        for task in self.todo_list:
+            yield task
 
     def GetTaskById(self, request, context):
+        task = self._get_task(key='id', value=request)
+
+        if task is None:
+            return todo_pb2.GetTaskByIdResponse(task=None)
         return task
 
     def GetTaskByName(self, request, context):
+        task = self._get_task(key='name', value=request)
+        if task is None:
+            return todo_pb2.GetTaskByNameResponse(task=None)
         return task
 
 
