@@ -3,9 +3,9 @@ syntax = "proto3";
 package todo;
 
 service Todo {
-    rpc ListTask (ListTaskRequest) returns (stream ListTaskResponse);
-    rpc GetTaskById (GetTaskByIdRequest) returns (GetTaskByIdResponce);
-    rpc GetTaskByName (GetTaskByNameRequest) returns (GetTaskByNameResponce);
+    rpc ListTask(ListTaskRequest) returns (stream ListTaskResponse);
+    rpc GetTaskById(GetTaskByIdRequest) returns (GetTaskByIdResponce);
+    rpc GetTaskByName(GetTaskByNameRequest) returns (GetTaskByNameResponce);
 }
 
 enum Priority {
