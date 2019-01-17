@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package todo;
+
+service Todo {
+    rpc ListTask (ListTaskRequest) returns (stream ListTaskResponse);
+    rpc GetTaskById (GetTaskByIdRequest) returns (GetTaskByIdResponce);
+    rpc GetTaskByName (GetTaskByNameRequest) returns (GetTaskByNameResponce);
+}
+
+enum Priority {
+    URG = 0;
+    HIGH = 1;
+    MED = 2;
+    LOW = 3;
+}
+
+message Task {
+    int32 id = 1;
+    string name = 2;
+    bool is_complete = 3;
+    Priority priority = 4;
+}
+
+message ListTaskRequest {
+}
+
+message ListTaskResponse {
+    Task task = 1;
+}
+
+message GetTaskByIdRequest {
+    string name = 1;
+    bool is_complete = 2;
+    Priority priority = 3;
+}
+
+message GetTaskByIdResponce {
+    Task task = 1;
+}
+
+message GetTaskByNameRequest {
+    string name = 1;
+}
+
+message GetTaskByNameResponce {
+    int32 id = 1;
+    bool is_complete = 2;
+    Priority priority = 3;
+}
