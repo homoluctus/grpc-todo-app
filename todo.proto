@@ -34,9 +34,7 @@ message GetTaskByIdRequest {
 }
 
 message GetTaskByIdResponse {
-    string name = 1;
-    bool is_complete = 2;
-    Priority priority = 3;
+    Task task = 1;
 }
 
 message GetTaskByNameRequest {
@@ -44,7 +42,5 @@ message GetTaskByNameRequest {
 }
 
 message GetTaskByNameResponse {
-    int32 id = 1;
-    bool is_complete = 2;
-    Priority priority = 3;
+    Task task = 1;
 }
