@@ -4,7 +4,7 @@ from .server import serve
 
 def handle_args():
     parser = argparse.ArgumentParser(
-                prog='Todo app'
+                prog='Todo app',
                 description='This app use gRPC',)
 
     parser.add_argument(
