@@ -2,7 +2,6 @@ import grpc
 import json
 from concurrent import futures
 
-
 import todo_pb2
 import todo_pb2_grpc
 
