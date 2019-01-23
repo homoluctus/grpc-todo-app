@@ -9,19 +9,19 @@ def handle_args():
 
     parser.add_argument(
         'path',
-        description='json file path to store data')
+        help='json file path to store data')
 
     parser.add_argument(
         '-w'
         '--worker',
         default=5,
-        description='Maximum workers for thread pool')
+        help='Maximum workers for thread pool')
 
     parser.add_argument(
         '-p',
         '--port',
         default='[::]:50051',
-        description='Bind port number')
+        help='Bind port number')
 
     return parser.parse_args()
 
