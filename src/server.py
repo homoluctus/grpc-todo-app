@@ -8,8 +8,8 @@ import todo_pb2_grpc
 
 
 class Todo(todo_pb2_grpc.TodoServicer):
-    def __init__(self):
-        self.todo_list = read_todo_from_db()
+    def __init__(self, db_path):
+        self.todo_list = read_todo_from_db(db_path)
 
     def _get_task(self, key, value):
         """
@@ -42,7 +42,7 @@ class Todo(todo_pb2_grpc.TodoServicer):
         return task
 
 
-def read_todo_from_db(path='todo_list.json'):
+def read_todo_from_db(db_path):
     """
     Reads todo list from database.
 
@@ -51,7 +51,7 @@ def read_todo_from_db(path='todo_list.json'):
 
     todo_list = []
 
-    with open(path) as todo_list_file:
+    with open(db_path) as todo_list_file:
         for item in json.load(todo_list_file):
             task = todo_pb2.Task(id=item['id'],
                                  name=item['name'],
@@ -61,10 +61,10 @@ def read_todo_from_db(path='todo_list.json'):
     return todo_list
 
 
-def serve():
-    server = grpc.server(futures.ThreadPoolExecutor(max_workers=5))
+def serve(max_workers=5, port='[::]:50051'):
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=max_workers))
     todo_pb2_grpc.add_TodoServicer_to_server(Todo(), server)
-    server.add_insecure_port('[::]:50051')
+    server.add_insecure_port(port)
     server.start()
 
 
