@@ -2,8 +2,8 @@ import grpc
 import json
 from concurrent import futures
 
-import todo_pb2
-import todo_pb2_grpc
+from . import todo_pb2
+from . import todo_pb2_grpc
 
 
 class Todo(todo_pb2_grpc.TodoServicer):

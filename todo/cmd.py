@@ -1,5 +1,5 @@
 import argparse
-from server import serve
+from .server import serve
 
 
 def handle_args():
