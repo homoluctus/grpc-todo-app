@@ -14,14 +14,18 @@ def handle_args():
     parser.add_argument(
         '-w'
         '--worker',
+        nargs='?',
         default=5,
+        dest='worker',
         help='Maximum workers for thread pool')
 
     parser.add_argument(
-        '-p',
-        '--port',
+        '-a',
+        '--address',
+        nargs='?',
+        dest='address',
         default='[::]:50051',
-        help='Bind port number')
+        help='Bind address (host and port)')
 
     return parser.parse_args()
 
@@ -30,4 +34,4 @@ def start_server():
     args = handle_args()
     serve(db_path=args.path,
           max_workers=args.worker,
-          port=args.port)
+          address=args.address)
