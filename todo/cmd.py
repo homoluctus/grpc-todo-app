@@ -14,12 +14,14 @@ def handle_args():
     parser.add_argument(
         '-w'
         '--worker',
+        nargs='?',
         default=5,
         help='Maximum workers for thread pool')
 
     parser.add_argument(
         '-p',
         '--port',
+        nargs='?',
         default='[::]:50051',
         help='Bind port number')
 
