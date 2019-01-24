@@ -4,8 +4,8 @@ from todo import todo_pb2_grpc
 
 
 def get_todo_list(stub):
-    response = stub.ListTask(todo_pb2.ListTaskRequest())
-    print(response)
+    for response in stub.ListTask(todo_pb2.ListTaskRequest()):
+        print(response)
 
 
 def get_task_by_name(stub, name):
@@ -20,4 +20,5 @@ def run(target='localhost:50051', callback=None, args=(), kwargs={}):
 
 
 if __name__ == '__main__':
-    run(callback=get_task_by_name, args=('task2',))
+    #run(callback=get_task_by_name, args=('task2',))
+    run(callback=get_todo_list)
