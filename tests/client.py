@@ -8,17 +8,17 @@ def get_todo_list(stub):
     for response in stub.ListTask(todo_pb2.ListTaskRequest()):
         todo_list.append(response)
 
-    return todo_list
+    print(todo_list)
 
 
 def get_task_by_id(stub, id_number):
     response = stub.GetTaskById(todo_pb2.GetTaskByIdRequest(id=id_number))
-    return response.task
+    print(response.task)
 
 
 def get_task_by_name(stub, name):
     response = stub.GetTaskByName(todo_pb2.GetTaskByNameRequest(name=name))
-    return response.task
+    print(response.task)
 
 
 def run(target='localhost:50051', callback=None, args=(), kwargs={}):
