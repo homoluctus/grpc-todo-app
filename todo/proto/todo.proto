@@ -6,6 +6,7 @@ service Todo {
     rpc ListTask(ListTaskRequest) returns (stream ListTaskResponse);
     rpc GetTaskById(GetTaskByIdRequest) returns (GetTaskByIdResponse);
     rpc GetTaskByName(GetTaskByNameRequest) returns (GetTaskByNameResponse);
+    rpc PostTask(PostTaskRequest) returns (PostTaskResponse);
 }
 
 enum Priority {
@@ -43,4 +44,12 @@ message GetTaskByNameRequest {
 
 message GetTaskByNameResponse {
     Task task = 1;
+}
+
+message PostTaskRequest {
+    Task task = 1;
+}
+
+message PostTaskResponse {
+    int32 is_success = 1;
 }
