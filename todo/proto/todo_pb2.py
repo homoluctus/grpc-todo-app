@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='todo',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\ntodo.proto\x12\x04todo\"W\n\x04Task\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0bis_complete\x18\x03 \x01(\x08\x12 \n\x08priority\x18\x04 \x01(\x0e\x32\x0e.todo.Priority\"\x11\n\x0fListTaskRequest\",\n\x10ListTaskResponse\x12\x18\n\x04task\x18\x01 \x01(\x0b\x32\n.todo.Task\" \n\x12GetTaskByIdRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"/\n\x13GetTaskByIdResponse\x12\x18\n\x04task\x18\x01 \x01(\x0b\x32\n.todo.Task\"$\n\x14GetTaskByNameRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"1\n\x15GetTaskByNameResponse\x12\x18\n\x04task\x18\x01 \x01(\x0b\x32\n.todo.Task\"+\n\x0fPostTaskRequest\x12\x18\n\x04task\x18\x01 \x01(\x0b\x32\n.todo.Task\"&\n\x10PostTaskResponse\x12\x12\n\nis_success\x18\x01 \x01(\x05*/\n\x08Priority\x12\x07\n\x03URG\x10\x00\x12\x08\n\x04HIGH\x10\x01\x12\x07\n\x03MED\x10\x02\x12\x07\n\x03LOW\x10\x03\x32\x8c\x02\n\x04Todo\x12;\n\x08ListTask\x12\x15.todo.ListTaskRequest\x1a\x16.todo.ListTaskResponse0\x01\x12\x42\n\x0bGetTaskById\x12\x18.todo.GetTaskByIdRequest\x1a\x19.todo.GetTaskByIdResponse\x12H\n\rGetTaskByName\x12\x1a.todo.GetTaskByNameRequest\x1a\x1b.todo.GetTaskByNameResponse\x12\x39\n\x08PostTask\x12\x15.todo.PostTaskRequest\x1a\x16.todo.PostTaskResponseb\x06proto3')
+  serialized_pb=_b('\n\ntodo.proto\x12\x04todo\"W\n\x04Task\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0bis_complete\x18\x03 \x01(\x08\x12 \n\x08priority\x18\x04 \x01(\x0e\x32\x0e.todo.Priority\"\x11\n\x0fListTaskRequest\",\n\x10ListTaskResponse\x12\x18\n\x04task\x18\x01 \x01(\x0b\x32\n.todo.Task\" \n\x12GetTaskByIdRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"/\n\x13GetTaskByIdResponse\x12\x18\n\x04task\x18\x01 \x01(\x0b\x32\n.todo.Task\"$\n\x14GetTaskByNameRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"1\n\x15GetTaskByNameResponse\x12\x18\n\x04task\x18\x01 \x01(\x0b\x32\n.todo.Task\"M\n\x0fPostTaskRequest\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12 \n\x08priority\x18\x03 \x01(\x0e\x32\x0e.todo.Priority\"&\n\x10PostTaskResponse\x12\x12\n\nis_success\x18\x01 \x01(\x05*/\n\x08Priority\x12\x07\n\x03URG\x10\x00\x12\x08\n\x04HIGH\x10\x01\x12\x07\n\x03MED\x10\x02\x12\x07\n\x03LOW\x10\x03\x32\x8c\x02\n\x04Todo\x12;\n\x08ListTask\x12\x15.todo.ListTaskRequest\x1a\x16.todo.ListTaskResponse0\x01\x12\x42\n\x0bGetTaskById\x12\x18.todo.GetTaskByIdRequest\x1a\x19.todo.GetTaskByIdResponse\x12H\n\rGetTaskByName\x12\x1a.todo.GetTaskByNameRequest\x1a\x1b.todo.GetTaskByNameResponse\x12\x39\n\x08PostTask\x12\x15.todo.PostTaskRequest\x1a\x16.todo.PostTaskResponseb\x06proto3')
 )
 
 _PRIORITY = _descriptor.EnumDescriptor(
@@ -48,8 +48,8 @@ _PRIORITY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=431,
-  serialized_end=478,
+  serialized_start=465,
+  serialized_end=512,
 )
 _sym_db.RegisterEnumDescriptor(_PRIORITY)
 
@@ -300,9 +300,23 @@ _POSTTASKREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='task', full_name='todo.PostTaskRequest.task', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='id', full_name='todo.PostTaskRequest.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='todo.PostTaskRequest.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='priority', full_name='todo.PostTaskRequest.priority', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -319,7 +333,7 @@ _POSTTASKREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=346,
-  serialized_end=389,
+  serialized_end=423,
 )
 
 
@@ -349,15 +363,15 @@ _POSTTASKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=391,
-  serialized_end=429,
+  serialized_start=425,
+  serialized_end=463,
 )
 
 _TASK.fields_by_name['priority'].enum_type = _PRIORITY
 _LISTTASKRESPONSE.fields_by_name['task'].message_type = _TASK
 _GETTASKBYIDRESPONSE.fields_by_name['task'].message_type = _TASK
 _GETTASKBYNAMERESPONSE.fields_by_name['task'].message_type = _TASK
-_POSTTASKREQUEST.fields_by_name['task'].message_type = _TASK
+_POSTTASKREQUEST.fields_by_name['priority'].enum_type = _PRIORITY
 DESCRIPTOR.message_types_by_name['Task'] = _TASK
 DESCRIPTOR.message_types_by_name['ListTaskRequest'] = _LISTTASKREQUEST
 DESCRIPTOR.message_types_by_name['ListTaskResponse'] = _LISTTASKRESPONSE
@@ -441,8 +455,8 @@ _TODO = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=481,
-  serialized_end=749,
+  serialized_start=515,
+  serialized_end=783,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListTask',

@@ -12,6 +12,7 @@ _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
 class Todo(todo_pb2_grpc.TodoServicer):
     def __init__(self, db_path):
+        self.__db_path = db_path
         self.todo_list = read_todo_from_db(db_path)
 
     def _get_task(self, key, value):
@@ -39,6 +40,16 @@ class Todo(todo_pb2_grpc.TodoServicer):
         task = self._get_task(key='name', value=request.name)
         return todo_pb2.GetTaskByNameResponse(task=task)
 
+    def PostTask(self, request, context):
+        task = {'id': len(self.todo_list),
+                'name': request.name,
+                'is_complete': False,
+                'priority': request.priority}
+
+        self.todo_list.append(task)
+        write_todo_to_db(self.__db_path, self.todo_list)
+
+        return todo_pb2.PostTaskResponse(is_success=True)
 
 def read_todo_from_db(db_path):
     """
@@ -47,10 +58,14 @@ def read_todo_from_db(db_path):
     Returns all task in database.
     """
 
-    with open(db_path) as db:
-        todo_list = json.load(db)
+    with open(db_path) as file:
+        todo_list = json.load(file)
 
     return todo_list
+
+def write_todo_to_db(db_path, todo):
+    with open(db_path, 'w') as file:
+        json.dump(todo, fp=file, indent=2)
 
 
 def serve(db_path, max_workers=5, address='[::]:50051'):

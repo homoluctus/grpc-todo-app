@@ -21,6 +21,22 @@ def get_task_by_name(stub, name):
     print(response.task)
 
 
+def post_task(stub, name, priority):
+    if not isinstance(name, str):
+        raise TypeError
+
+    if not isinstance(priority, int):
+        raise TypeError
+
+    response = stub.PostTask(
+            todo_pb2.PostTaskRequest(name=name, priority=priority))
+
+    if response:
+        print('SUCCESS')
+    else:
+        print('FAILURE')
+
+
 def run(target='localhost:50051', callback=None, args=(), kwargs={}):
     with grpc.insecure_channel(target) as channel:
         stub = todo_pb2_grpc.TodoStub(channel)
@@ -33,3 +49,5 @@ def main():
     run(callback=get_task_by_id, args=(1,))
     print('============ get_task_by_name() ================')
     run(callback=get_task_by_name, args=('task2',))
+    #print('============ post_task() ================')
+    #run(callback=post_task, args=('test2', 2))
