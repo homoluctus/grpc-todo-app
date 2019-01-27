@@ -1,5 +1,5 @@
 # grpc-todo-app
-Todo app is created using gRPC
+Todo app is used gRPC
 
 ## Component
 - server
