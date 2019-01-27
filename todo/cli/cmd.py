@@ -3,7 +3,7 @@ import argparse
 from ..client import client
 from ..server import server
 
-def handle_args():
+def handle_command():
     parser = argparse.ArgumentParser(
                 prog='todo',
                 description='Todo server and client tool',)
@@ -23,11 +23,11 @@ def handle_args():
         help='client sub command'
     )
 
-    handle_server_args(server_parser)
+    handle_server_subcommand(server_parser)
 
     return parser.parse_args()
 
-def handle_server_args(parser):
+def handle_server_subcommand(parser):
     parser.add_argument(
         'path',
         help='json file path to store data'
@@ -53,7 +53,7 @@ def handle_server_args(parser):
 
 
 def main():
-    args = handle_args()
+    args = handle_command()
 
     if getattr(args, 'mode') == 'server':
         server.serve(
