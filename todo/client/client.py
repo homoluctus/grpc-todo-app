@@ -26,7 +26,7 @@ def run(target='localhost:50051', callback=None, args=(), kwargs={}):
         stub = todo_pb2_grpc.TodoStub(channel)
         callback(stub, *args, **kwargs)
 
-if __name__ == '__main__':
+def main():
     print('============ get_todo_list() ================')
     run(callback=get_todo_list)
     print('============ get_task_by_id() ================')
