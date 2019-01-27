@@ -3,8 +3,11 @@ import json
 import time
 from concurrent import futures
 
-from . import todo_pb2
-from . import todo_pb2_grpc
+from ..proto import todo_pb2
+from ..proto import todo_pb2_grpc
+
+
+_ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
 
 class Todo(todo_pb2_grpc.TodoServicer):
@@ -57,6 +60,6 @@ def serve(db_path, max_workers=5, address='[::]:50051'):
     server.start()
     try:
         while True:
-            time.sleep(3600)
+            time.sleep(_ONE_DAY_IN_SECONDS)
     except KeyboardInterrupt:
         server.stop(None)

@@ -1,6 +1,6 @@
 import grpc
-from todo import todo_pb2
-from todo import todo_pb2_grpc
+from ..proto import todo_pb2
+from ..proto import todo_pb2_grpc
 
 
 def get_todo_list(stub):
@@ -25,3 +25,11 @@ def run(target='localhost:50051', callback=None, args=(), kwargs={}):
     with grpc.insecure_channel(target) as channel:
         stub = todo_pb2_grpc.TodoStub(channel)
         callback(stub, *args, **kwargs)
+
+if __name__ == '__main__':
+    print('============ get_todo_list() ================')
+    run(callback=get_todo_list)
+    print('============ get_task_by_id() ================')
+    run(callback=get_task_by_id, args=(1,))
+    print('============ get_task_by_name() ================')
+    run(callback=get_task_by_name, args=('task2',))
